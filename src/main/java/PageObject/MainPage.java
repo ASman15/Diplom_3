@@ -1,0 +1,55 @@
+package PageObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+public class MainPage {
+    private WebDriver driver;
+
+    private final By accountEnterButtonLocator = By.xpath(".//button[text()='Войти в аккаунт']");
+    private final By arrangeOrderButtonLocator = By.xpath(".//button[text()='Оформить заказ']");
+    private final By personalAccButtonLocator = By.xpath(".//p[text()='Личный Кабинет']");
+    private final By bunConstructorButtonLocator = By.xpath(".//span[text()='Булки']/parent::div");
+    private final By sauseConstructorButtonLocator = By.xpath(".//span[text()='Соусы']/parent::div");
+    private final By fillingConstructorButtonLocator = By.xpath(".//span[text()='Начинки']/parent::div");
+    private final By ingredientFirstBunLocator = By.xpath(".//a[@href = '/ingredient/61c0c5a71d1f82001bdaaa6d']");
+    private final By ingredientFirstSauceLocator = By.xpath(".//a[@href = '/ingredient/61c0c5a71d1f82001bdaaa72']");
+    private final By ingredientFirstFillingLocator = By.xpath(".//a[@href = '/ingredient/61c0c5a71d1f82001bdaaa6f']");
+    public MainPage(WebDriver driver) {
+        this.driver = driver;
+    }
+    public void personalAccButtonClick() {
+        driver.findElement(personalAccButtonLocator).click();
+    }
+    public void accEnterButtonClick() {
+        driver.findElement(accountEnterButtonLocator).click();
+    }
+    public void loginIsSuccess() {
+        new WebDriverWait(driver, 8)
+                .until(ExpectedConditions.visibilityOfElementLocated(arrangeOrderButtonLocator));
+        driver.findElement(arrangeOrderButtonLocator).isDisplayed();
+    }
+    public void ingredientFirstBunIsDisplayed() {
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstBunLocator));
+        driver.findElement(ingredientFirstBunLocator).isDisplayed();
+    }
+    public void transferingConstructorByBunButton() {
+        driver.findElement(bunConstructorButtonLocator).click();
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstBunLocator));
+        driver.findElement(ingredientFirstBunLocator).isDisplayed();
+    }
+    public void transferingConstructorBySauseButton() {
+        driver.findElement(sauseConstructorButtonLocator).click();
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstSauceLocator));
+        driver.findElement(ingredientFirstSauceLocator).isDisplayed();
+    }
+    public void transferingConstructorByFillingButton() {
+        driver.findElement(fillingConstructorButtonLocator).click();
+        new WebDriverWait(driver, 3)
+                .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstFillingLocator));
+        driver.findElement(ingredientFirstFillingLocator).isDisplayed();
+    }
+}
