@@ -1,4 +1,5 @@
 package pages.stellarburgers.site;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,34 +19,41 @@ public class MainPage {
     public MainPage(WebDriver driver) {
         this.driver = driver;
     }
+    @Step("Click at Personal Account button")
     public void personalAccButtonClick() {
         driver.findElement(personalAccButtonLocator).click();
     }
+    @Step("Click at Enter in Account button")
     public void accEnterButtonClick() {
         driver.findElement(accountEnterButtonLocator).click();
     }
+    @Step("Check login test user")
     public void loginIsSuccess() {
         new WebDriverWait(driver, 8)
                 .until(ExpectedConditions.visibilityOfElementLocated(arrangeOrderButtonLocator));
         driver.findElement(arrangeOrderButtonLocator).isDisplayed();
     }
+    @Step("Check the first of Bun in constructor is displayed")
     public void ingredientFirstBunIsDisplayed() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstBunLocator));
         driver.findElement(ingredientFirstBunLocator).isDisplayed();
     }
+    @Step("Check transfering by Bun button")
     public void transferingConstructorByBunButton() {
         driver.findElement(bunConstructorButtonLocator).click();
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstBunLocator));
         driver.findElement(ingredientFirstBunLocator).isDisplayed();
     }
+    @Step("Check transfering by Sause button")
     public void transferingConstructorBySauseButton() {
         driver.findElement(sauseConstructorButtonLocator).click();
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstSauceLocator));
         driver.findElement(ingredientFirstSauceLocator).isDisplayed();
     }
+    @Step("Check transfering by Filling button")
     public void transferingConstructorByFillingButton() {
         driver.findElement(fillingConstructorButtonLocator).click();
         new WebDriverWait(driver, 3)
