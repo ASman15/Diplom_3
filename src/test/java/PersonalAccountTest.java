@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import pages.stellarburgers.site.APIPage;
 import pages.stellarburgers.site.MainPage;
 import pages.stellarburgers.site.PersonalAccPage;
+import java.util.concurrent.TimeUnit;
 
 public class PersonalAccountTest {
     static String email = "dataTest@yandex.ru";
@@ -21,6 +22,7 @@ public class PersonalAccountTest {
     @Before
     public void setup() {
         Browser browser = new Browser();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver = browser.getWebDriver("chrome");
         driver.get("https://stellarburgers.nomoreparties.site");
     }

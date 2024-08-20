@@ -29,35 +29,25 @@ public class MainPage {
     }
     @Step("Check login test user")
     public void loginIsSuccess() {
-        new WebDriverWait(driver, 8)
-                .until(ExpectedConditions.visibilityOfElementLocated(arrangeOrderButtonLocator));
         driver.findElement(arrangeOrderButtonLocator).isDisplayed();
     }
     @Step("Check the first of Bun in constructor is displayed")
     public void ingredientFirstBunIsDisplayed() {
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstBunLocator));
         driver.findElement(ingredientFirstBunLocator).isDisplayed();
     }
     @Step("Check transfering by Bun button")
     public void transferingConstructorByBunButton() {
         driver.findElement(bunConstructorButtonLocator).click();
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstBunLocator));
         driver.findElement(ingredientFirstBunLocator).isDisplayed();
     }
     @Step("Check transfering by Sause button")
     public void transferingConstructorBySauseButton() {
         driver.findElement(sauseConstructorButtonLocator).click();
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstSauceLocator));
         driver.findElement(ingredientFirstSauceLocator).isDisplayed();
     }
     @Step("Check transfering by Filling button")
     public void transferingConstructorByFillingButton() {
         driver.findElement(fillingConstructorButtonLocator).click();
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.visibilityOfElementLocated(ingredientFirstFillingLocator));
         driver.findElement(ingredientFirstFillingLocator).isDisplayed();
     }
 }

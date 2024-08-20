@@ -2,6 +2,7 @@ import io.restassured.RestAssured;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import pages.stellarburgers.site.*;
+import java.util.concurrent.TimeUnit;
 
 public class EnterAccountTest {
     static String email = "dataTest@yandex.ru";
@@ -19,6 +20,7 @@ public class EnterAccountTest {
     @Before
     public void setup() {
         Browser browser = new Browser();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver = browser.getWebDriver("chrome");
         driver.get("https://stellarburgers.nomoreparties.site");
     }

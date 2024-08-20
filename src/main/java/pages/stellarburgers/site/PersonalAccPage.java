@@ -35,8 +35,6 @@ public class PersonalAccPage {
     }
     @Step("Click on Exit account button")
     public void exitAccountButtonClick() {
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.visibilityOfElementLocated(exitFromAccAfterLoginButtonLocator));
         driver.findElement(exitFromAccAfterLoginButtonLocator).click();
     }
     @Step("Ckeck the button Enter is displayed")
@@ -44,8 +42,6 @@ public class PersonalAccPage {
         driver.findElement(enterButtonLocator).isDisplayed();
     }
     public void loginOutIsSuccess() {
-        new WebDriverWait(driver, 3)
-                .until(ExpectedConditions.visibilityOfElementLocated(enterTitleLocator));
         driver.findElement(enterTitleLocator).isDisplayed();
     }
     @Step("Click on link Recover password")
