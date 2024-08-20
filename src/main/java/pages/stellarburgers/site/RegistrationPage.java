@@ -1,5 +1,6 @@
 package pages.stellarburgers.site;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,19 +15,15 @@ public class RegistrationPage {
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
+    @Step("Click on link Login")
     public void clickLoginLink() {
         WebElement linkEnter = driver.findElement(enterLinkLocator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", linkEnter);
         driver.findElement(enterLinkLocator).click();
     }
-
+    @Step("Check enter incorrect password")
     public void passIsIncorrect () {
         driver.findElement(passFieldLocator).sendKeys("passw");
-        driver.findElement(nameFieldLocator).click();
-        driver.findElement(incorrectPassTitle).isDisplayed();
-    }
-    public void clickPassEnterField () {
-        driver.findElement(passFieldLocator).sendKeys("");
         driver.findElement(nameFieldLocator).click();
         driver.findElement(incorrectPassTitle).isDisplayed();
     }

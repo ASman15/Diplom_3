@@ -1,5 +1,6 @@
 package pages.stellarburgers.site;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -20,20 +21,25 @@ public class PersonalAccPage {
     private final By recoverPasswordLinkLocator = By.linkText("Восстановить пароль");
     private final By exitFromAccAfterLoginButtonLocator = By.xpath(".//button[text()='Выход']");
     public PersonalAccPage(WebDriver driver) {this.driver = driver;}
+    @Step("Click on link Registration")
     public void registrationLinkClick() {
         driver.findElement(registrationLinkLocator).click();
     }
+    @Step("Click on Constructor button")
     public void constructorButtonClick() {
         driver.findElement(constructorButtonLocator).click();
     }
+    @Step("Click on logo")
     public void logoClick() {
         driver.findElement(mainLogotipLocator).click();
     }
+    @Step("Click on Exit account button")
     public void exitAccountButtonClick() {
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(exitFromAccAfterLoginButtonLocator));
         driver.findElement(exitFromAccAfterLoginButtonLocator).click();
     }
+    @Step("Ckeck the button Enter is displayed")
     public void enterButtonIsDisplayed() {
         driver.findElement(enterButtonLocator).isDisplayed();
     }
@@ -42,11 +48,13 @@ public class PersonalAccPage {
                 .until(ExpectedConditions.visibilityOfElementLocated(enterTitleLocator));
         driver.findElement(enterTitleLocator).isDisplayed();
     }
+    @Step("Click on link Recover password")
     public void recoverPassLinkClick() {
         WebElement linkRecoverPass = driver.findElement(recoverPasswordLinkLocator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", linkRecoverPass);
         driver.findElement(recoverPasswordLinkLocator).click();
     }
+    @Step("Login in test account")
     public void accLogin(String email, String password) {
         driver.findElement(emailFieldLocator).sendKeys(email);
         driver.findElement(passwordFieldLocator).sendKeys(password);
