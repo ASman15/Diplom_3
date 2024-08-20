@@ -1,4 +1,3 @@
-import PageObject.*;
 import io.restassured.RestAssured;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
