@@ -2,7 +2,9 @@ import PageObject.*;
 import io.restassured.RestAssured;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.stellarburgers.site.APIPage;
+import pages.stellarburgers.site.MainPage;
+import pages.stellarburgers.site.PersonalAccPage;
 
 public class PersonalAccountTest {
     static String email = "dataTest@yandex.ru";

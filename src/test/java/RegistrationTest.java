@@ -1,12 +1,12 @@
-import PageObject.APIPage;
-import PageObject.MainPage;
-import PageObject.PersonalAccPage;
-import PageObject.RegistrationPage;
+import pages.stellarburgers.site.APIPage;
+import pages.stellarburgers.site.MainPage;
+import pages.stellarburgers.site.PersonalAccPage;
+import pages.stellarburgers.site.RegistrationPage;
 import io.restassured.RestAssured;
 import org.junit.AfterClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import static org.hamcrest.Matchers.is;
 
 public class RegistrationTest {

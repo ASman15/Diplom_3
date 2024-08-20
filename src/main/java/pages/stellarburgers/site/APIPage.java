@@ -1,4 +1,4 @@
-package PageObject;
+package pages.stellarburgers.site;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
