@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: EnterAccountTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 95.60 s -- in EnterAccountTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 65.118 s - in EnterAccountTest

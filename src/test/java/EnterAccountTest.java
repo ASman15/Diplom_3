@@ -20,8 +20,9 @@ public class EnterAccountTest {
     @Before
     public void setup() {
         Browser browser = new Browser();
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver = browser.getWebDriver("chrome");
+        driver.manage().timeouts().implicitlyWait(1,
+                TimeUnit.SECONDS);
         driver.get("https://stellarburgers.nomoreparties.site");
     }
 
